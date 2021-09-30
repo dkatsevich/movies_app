@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400;500;600;700&family=IBM+Plex+Serif:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container{
+    // min-width: 1280px;
+    .movieContainer{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "pp mi";
+        .posterPath{
+            border-radius: 0.8rem;
+            box-shadow: .5em 1em 1em rgb(64, 64, 70);
+            border: 1px solid rgb(211, 188, 188);
+              grid-area: pp;
+              align-self: center;
+              margin: 0 auto;
+              max-width: fit-content;
+            max-height: 80%;
+            height: 90%;
+        }
+        .movieInformation{
+            padding: 1em;
+            font-family: 'Montserrat', sans-serif;
+            grid-area: mi;
+            max-width: 100%;
+            .movieTop{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-areas: 
+                "title title title"
+                "title title title"
+                "subtitle subtitle subtitle "
+                "ratings runtime runtime";
+                .titles{
+                font-weight: 700;
+                }
+                .title{
+                // color: #171738;
+                text-transform: uppercase;
+                text-shadow: 6px 4px 14px rgba(165, 154, 135, 0.63);  
+                text-align: center;  
+                letter-spacing: .01em;
+                align-self: center;
+                grid-area: title;
+                font-size: 2.2em;
+                margin: 0;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: normal;
+                }
+                .subtitle{
+                    font-weight: 500;
+                    font-size: 1.1em;
+                    grid-area: subtitle;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 0;
+                    font-family: 'IBM Plex Serif', serif;
+                    font-weight: 400;
+                    margin-bottom: .7em;
+                }
+                .ratingSection{
+                    grid-area: ratings;
+                    margin-top: .5em;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
+                    .votes{
+                       justify-content: center;
+                       align-content: center;
+                       align-items: center; 
+                    //    margin-top: 3px;
+                       justify-items: center;
+                       margin-left: 3px;
+                    }
+                   
+                }
+                .votes{
+                    grid-area: votes;
+                }
+                .releaseDate{
+                    grid-area: release;
+                }
+                .runtime{
+                    grid-area: runtime;
+                    max-width: 100%;
+                    text-align: right;
+                    margin: auto;
+                    justify-items: end;
+                    margin-right: 0px;
+                
+                }
+              
+            }
+            .movieMiddle{
+                display: flex;
+                height: auto;
+                flex-direction: column;
+                margin-top: 4em;
+                .synopsisContainer{
+                    margin-bottom: 1.2em;
+                    .castTitle{
+                        font-family: 'IBM Plex Sans', sans-serif;
+                        font-weight: 400;
+                    }
+                      .textSummary{
+                          font-size: 1.2em;
+                          font-family: 'IBM Plex Serif', serif;
+                          font-weight: 300;
+                      }
+                  }
+                .genres{
+                    display: grid;
+                    margin-bottom: 2em;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+                    grid-template-areas: 
+                    "genreTitle genreTitle"
+                    "genreList .";
+                    .genreTitle{
+                        text-align: center;
+                        grid-area: genreTitle;
+                        text-align: left;
+                        font-family: 'IBM Plex Sans', sans-serif;
+                        font-weight: 400;
+                        font-size: 1.5em;
+                    }
+                    .genreList{
+                        align-items: center;
+                        height: auto;
+                        grid-area: genreList;
+                        display: flex;
+                        text-align: left;
+                        justify-content: end;
+                        .links{
+                             text-align: center;
+                             padding: .5em .6em;
+                             font-size: .9em;
+                             border-radius: 1em;
+                             border: none;
+                             margin-right: .5em;
+                            //  color: #020f1f;
+                             font-family: 'IBM Plex Serif', serif;
+                             font-weight: 400;
+                             align-items: center;
+                             text-transform: uppercase;
+                             &:hover{
+                            text-decoration: none;
+                            transform: translateY(-3px);  
+                            transition: ease-in .3s;
+ 
+                         
+                        }   
+
+                        }
+                    }
+                   
+                }
+               
+                .cast{
+                    display: grid;
+                    max-width: 100%;
+                    margin: 0;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+                    grid-template-areas: 
+                    "casttitle casttitle"
+                    "castlist .";
+                    align-items: center;
+                    .castList{
+                        grid-area: castlist;
+                    }
+                    .castTitle{
+                        text-align: left;
+                      justify-content: end;
+                      grid-area: casttitle;
+                      font-family: 'IBM Plex Sans', sans-serif;
+                      font-weight: 400;              
+                    }
+                       
+                    .castImage{   
+                        width: 5em;
+                        height: 5em;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        object-fit: cover;
+                        background-color: transparent;
+                        margin: 5px .7em;
+                    }
+                }
+            }
+
+            .buttons{
+                display: flex;
+                justify-content: space-between;
+                text-decoration: none;
+             
+                .right{
+                    display: flex;
+                    border: .5px solid;
+                    align-items: center;
+                    padding: 4px 20px;
+                    border-radius: 50px;
+                    // background: #0a0909;
+                    color: rgb(12, 12, 12);
+                    margin: 0 2px;
+                    font-family: 'IBM Plex Serif', serif;
+                    font-weight: 400;
+                    &:hover{
+                        transition: ease-in .2s;
+                        text-decoration: none;
+
+                        background: #263238;
+                        color: white;
+                        transform: translateY(-3px);                                
+
+                        
+                    }   
+                }
+                
+                .left{
+                    display: flex;
+                    .button{
+                        display: flex;
+                        border: .5px solid;
+                        align-items: center;
+                        padding: 4px 20px;
+                        border-radius: 50px;
+                        background: #FFFFFF;
+                        color: rgb(12, 12, 12);
+                        margin: 0 2px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: 700;
+                       
+                        &:hover{
+                            text-decoration: none;
+                            background: #263238;
+                            color: white;
+                            transition: ease-in .3s;
+                            transform: translateY(-3px); 
+                            box-shadow:  3px 2px 2px #505b62, 
+                        }                    
+                    }
+                }
+               
+
+            }
+
+       
+           
+        }
+
+    }
+}
+.loadingContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalVideo{
+    max-height: 90%;
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    .video{
+        height:100%;
+        width: 100%;
+        margin: auto;
+        
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .container{
+        min-width: 320px;
+        .movieContainer{
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            .posterPath{
+                height: 450px;
+                max-width: fit-content;
+                margin-top: 10px;
+            }
+            .movieInformation{
+                display: flex;
+                flex-direction: column;
+                .movieTop{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-content: space-between;
+                    height: 200px;
+                    .title{
+                        margin-top: .5em;
+                        margin-bottom: .5em;
+                    }
+                    .runtime{
+                        margin: auto;
+                    }
+                }
+                .movieMiddle{
+                    margin-top: 10px;
+                    height: auto;
+                    .genres{
+                        margin: 0;
+                        height: auto;
+                        .genreList{
+                            margin: 0;
+                            margin-bottom: 1em;
+                        }
+                    }
+                    .cast{
+                        .castImage{
+                            width: 3.1em;
+                            height: auto;
+                        }
+                    }
+                }
+                .buttons{
+                    margin: 1em 0 1.5em 0;
+                }
+            }
+        }
+    }
+    .modalVideo{
+        max-height: 50%;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        .video{
+            height:100%;
+            width: 100%;
+            margin: auto;
+            
+        }
+    
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .container{
+        min-width: 481px;
+        .movieContainer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .posterPath{
+                height: 500px;
+                max-width: fit-content;
+                margin-top: 10px;
+            }
+            .movieInformation{
+                display: flex;
+                flex-direction: column;
+                .movieTop{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-content: space-between;
+                    height: 200px;
+                    .title{
+                        margin-top: .5em;
+                        margin-bottom: .5em;
+                    }
+                    .runtime{
+                        margin: auto;
+                    }
+                }
+                .movieMiddle{
+                    margin-top: 10px;
+                    .cast{
+                        .castImage{
+                            width: 3.7em;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modalVideo{
+        max-height: 70%;
+        max-width: 80%;
+        display: flex;
+        margin: auto;
+        .video{
+            height:100%;
+            width: 100%;
+            
+        }
+    
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container{
+        min-width: 768px;
+        .movieContainer{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .posterPath{
+                max-width: fit-content;
+                width: 800px;
+                margin-top: 10px;
+            }
+            .movieInformation{
+                display: flex;
+                flex-direction: column;
+                .movieTop{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-content: space-between;
+                    height: 200px;
+                    .title{
+                        margin-top: .5em;
+                        margin-bottom: .5em;
+                    }
+                    .runtime{
+                        margin: auto;
+                    }
+                }
+                .movieMiddle{
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    .cast{
+                        .castImage{
+                            width: 3.7em;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modalVideo{
+        max-height: 70%;
+        max-width: 80%;
+        display: flex;
+        margin: auto;
+        .video{
+            height:100%;
+            width: 100%;
+            
+        }
+    }
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+    .container{
+        min-width: 1025px;
+    }
+    .modalVideo{
+        max-height: 85%;
+        max-width: 80%;
+        display: flex;
+        margin: auto;
+        .video{
+            height:100%;
+            width: 100%;
+            
+        }
+    
+    }
+  
+}
